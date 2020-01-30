@@ -1,6 +1,6 @@
 Feature: Using the Contact Us form to add a comment and extract the data from the comments box	
 	
-	#Using the contact form
+#Using the contact form
 Background: 
 	Given I access webdriveruniversity  
 	
