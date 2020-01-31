@@ -10,10 +10,17 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.PageFactory;
+
+import pageObjects.ContactUsPage;
+import pageObjects.ProductPage;
 
 public class DriverFactory {
 
 public static WebDriver driver;
+public static ContactUsPage contactpage; //this pages need to initialized 
+public static ProductPage productpage;
+
 	
 	public WebDriver getDriver() throws Exception {
 		try {
@@ -58,7 +65,11 @@ public static WebDriver driver;
 			System.out.println("Unable to load browser! - Exception: " + e.getMessage());
 		} finally {
 			driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+			contactpage = PageFactory.initElements(driver, ContactUsPage.class);
+			contactpage = PageFactory.initElements(driver, ContactUsPage.class);
+
 		}
+		
 		return driver;
 	}
 }
